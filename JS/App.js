@@ -1,12 +1,28 @@
-const buttonMenu = document.querySelector("#buttonMenu");
+const tagHTML = document.querySelector("html");
 const listMenu = document.querySelector("#listMenu");
-const popupBtn = document.querySelector("#popup-btn");
 const popupContent = document.querySelector("#popup");
+const popupBtn = document.querySelector("#popup-btn");
+const iconMenu = document.querySelector(".icon-menu");
+const buttonMenu = document.querySelector("#buttonMenu");
+const menuCatalogBtnBack = document.querySelector(".menu-catalog__back");
+const subMenuCatalogBtnBack = document.querySelector(".back-sub-menu-catalog");
+const mediaQueryMobile = window.matchMedia("(max-width: 767px)").matches;
 const menuCatalogLinks = document.querySelectorAll(".menu-catalog__link");
-const mediaQuery = window.matchMedia("(max-width: 1023px)").matches;
+const menuCatalogLinkFirstChild = menuCatalogLinks[0];
+const mediaQueryTablet = window.matchMedia("(max-width: 1023px)").matches;
+const menuTopHeaderLinkArrow = document.querySelector(
+  ".menu-top-header__link_arrow"
+);
 
-buttonMenu.addEventListener("click", openMenu);
 popupBtn.addEventListener("click", openPopup);
+buttonMenu.addEventListener("click", openMenu);
+iconMenu.addEventListener("click", closeCatalogMenu);
+iconMenu.addEventListener("click", addClassesToElements);
+iconMenu.addEventListener("click", closeSubMenuCatalog);
+menuCatalogBtnBack.addEventListener("click", closeCatalogMenu);
+subMenuCatalogBtnBack.addEventListener("click", closeSubMenuCatalog);
+menuTopHeaderLinkArrow.addEventListener("click", openCatalogMenu);
+menuCatalogLinkFirstChild.addEventListener("click", openSubMenuCatalog);
 
 menuCatalogLinks.forEach((link) =>
   link.addEventListener("click", changeStyleGridTemplateColumns)
@@ -18,7 +34,7 @@ menuCatalogLinks.forEach((link) =>
 document.addEventListener("click", documentActions);
 document.onclick = closeElements;
 
-transferElemenst(mediaQuery);
+transferElements(mediaQueryTablet, mediaQueryMobile);
 
 function closeElements(event) {
   const currentTarget = event.target;
@@ -42,8 +58,28 @@ function openPopup() {
   popupContent.classList.add("popup_active");
 }
 
+function openCatalogMenu() {
+  tagHTML.classList.add("catalog-open");
+}
+
+function openSubMenuCatalog() {
+  tagHTML.classList.add("sub-catalog-open");
+}
+
 function closePopup() {
   popupContent.classList.remove("popup_active");
+}
+
+function closeCatalogMenu() {
+  if (tagHTML.classList.contains("catalog-open")) {
+    tagHTML.classList.remove("catalog-open");
+  }
+}
+
+function closeSubMenuCatalog() {
+  if (tagHTML.classList.contains("sub-catalog-open")) {
+    tagHTML.classList.remove("sub-catalog-open");
+  }
 }
 
 function documentActions(event) {
@@ -104,14 +140,29 @@ function changeStyleGridTemplateColumns(menuBlockItems) {
   });
 }
 
-function transferElemenst(mediaQuery) {
-  if (mediaQuery) {
+function addClassesToElements() {
+  tagHTML.classList.toggle("menu-open");
+  iconMenu.classList.toggle("close-icon-menu");
+}
+
+function transferElements(mediaQueryTablet, mediaQueryMobile) {
+  if (mediaQueryTablet) {
     const menuBody = document.querySelector(".menu__body");
+    const menuTopHeaderList = document.querySelector(".menu-top-header__list");
+
     const topHeaderContent = document.querySelector(".top-header__content");
     const phonesHeader = document.querySelector(".phones-header");
-    const menuTopHeaderList = document.querySelector(".menu-top-header__list");
 
     menuBody.appendChild(menuTopHeaderList);
     topHeaderContent.insertBefore(phonesHeader, topHeaderContent.firstChild);
+  }
+
+  if (mediaQueryMobile) {
+    const catalogHeaderContent = document.querySelector(
+      ".catalog-header__content"
+    );
+    const bodyHeaderSearch = document.querySelector(".body-header__search");
+
+    catalogHeaderContent.appendChild(bodyHeaderSearch);
   }
 }

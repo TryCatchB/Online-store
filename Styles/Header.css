@@ -11,18 +11,18 @@
   padding: 0.625rem 0;
 }
 
+.top-header__favourite,
+.top-header__cart {
+  position: relative;
+  z-index: 5;
+}
+
 .top-header__menu {
   flex: 1 1 auto;
 }
 
-.menu-top-header {
-}
-
 .menu {
   display: none;
-}
-
-.menu__body {
 }
 
 .menu-top-header__list,
@@ -41,10 +41,11 @@
 
 .top-header__user {
   position: relative;
+  z-index: 5;
   display: inline-flex;
   align-items: center;
   font-weight: 600;
-  padding-left: 2.2em;
+  padding-left: 2.1875rem;
 }
 
 .top-header__user::before {
@@ -72,13 +73,10 @@
 
 .body-header__search {
   flex: 1 1 auto;
-  padding-right: 1.25rem;
-  padding-left: 18.8%;
 }
 
 .search-header {
   position: relative;
-  max-width: 23.5625rem;
   border-radius: 3px;
   border: 1px solid rgba(4, 4, 4, 0.5);
   background-color: rgba(7, 7, 7, 0.03);
@@ -106,7 +104,7 @@
 .search-header__input {
   height: 2.5625rem;
   width: 100%;
-  color: inherit;
+  color: #000;
   background-color: transparent;
   padding: 0 1.25rem 0 3.125rem;
 }
@@ -116,6 +114,11 @@
 }
 
 /* BODY-HEADER (ACTIONS-HEADER) */
+
+.actions-header__phones {
+  position: relative;
+  z-index: 5;
+}
 
 .actions-header__content {
   display: flex;
@@ -313,36 +316,16 @@
   background-color: #000;
 }
 
-.catalog-header__content {
-}
-
-.catalog-header__menu {
-}
-
-.menu-catalog {
-}
-
 .menu-catalog__list {
   display: flex;
   gap: 10px;
   justify-content: space-between;
 }
 
-.menu-catalog__item {
-}
-
 .menu-catalog__link {
   position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  min-height: 70px;
-  padding: 0 0.625rem;
+  display: inline-flex;
   transition: color 0.3s ease-in-out;
-}
-
-.menu-catalog__link._sub-menu-active {
 }
 
 .menu-catalog__link::after {
@@ -358,21 +341,9 @@
   transition: all 0.3s ease-in-out;
 }
 
-.menu-catalog__link.hover_underline:hover {
-  color: #e8aa31;
-}
-
-.menu-catalog__link.hover_underline:hover.menu-catalog__link::after {
-  opacity: 1;
-  visibility: visible;
-}
-
 .menu-catalog__sub-menu {
   width: 100%;
   background-color: #000;
-}
-
-.sub-menu-catalog {
 }
 
 .sub-menu-catalog__container {
@@ -389,11 +360,6 @@
   grid-template-columns: repeat(5, minmax(auto, 20rem));
 }
 
-.sub-menu-catalog__category {
-  font-weight: 700;
-  padding: 1.875rem 0.9375rem 1.875rem 0;
-}
-
 .sub-menu-catalog__list {
   display: flex;
   flex-direction: column;
@@ -401,9 +367,6 @@
   padding: 1.875rem 0.9375rem 1.875rem 0;
   border-top: 1px solid rgba(255, 255, 255, 0.3);
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-}
-
-.sub-menu-catalog__item {
 }
 
 .sub-menu-catalog__footer {
@@ -415,12 +378,6 @@
 }
 
 /* MEDIA (PC) */
-
-@media (max-width: 1000px) {
-  .actions-header__content {
-    column-gap: 15px;
-  }
-}
 
 @media (min-width: 1025px) {
   .hover_underline:hover {
@@ -446,15 +403,80 @@
 
 /* MEDIA (TABLET) */
 
+@media (max-width: 1000px) {
+  .actions-header__content {
+    column-gap: 15px;
+  }
+}
+
 @media (min-width: 1023px) {
   .top-header__favourite,
   .top-header__cart,
-  .menu-top-header__link_arrow {
+  .menu-top-header__link_arrow,
+  .menu-catalog__back,
+  .sub-menu-catalog__back {
     display: none;
+  }
+
+  .body-header__search {
+    padding-right: 1.25rem;
+    padding-left: 10%;
+  }
+
+  .search-header {
+    max-width: 23.5625rem;
+  }
+
+  .menu-catalog__link {
+    min-height: 70px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 0.625rem;
+  }
+
+  .menu-catalog__link.hover_underline:hover {
+    color: #e8aa31;
+  }
+
+  .menu-catalog__link.hover_underline:hover.menu-catalog__link::after {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .back-sub-menu-catalog,
+  .menu-catalog__link img {
+    display: none;
+  }
+
+  .sub-menu-catalog__category {
+    font-weight: 700;
+    padding: 1.875rem 0;
   }
 }
 
 @media (max-width: 1023px) {
+  .top-header__content {
+    gap: 1.875rem;
+  }
+
+  .top-header__user span {
+    display: none;
+  }
+
+  .top-header__user {
+    padding-left: 1.5625rem;
+  }
+
+  .phones-header__phone {
+    font-size: 1.5625rem;
+  }
+
+  .phones-header__arrow,
+  .phones-header__callback {
+    display: none;
+  }
+
   .menu {
     display: flex;
     justify-content: flex-end;
@@ -467,30 +489,55 @@
 
   .menu-top-header__list {
     flex-direction: column;
-    row-gap: 15px;
+    row-gap: 25px;
+  }
+
+  html.menu-open .menu__body {
+    left: 0;
   }
 
   .menu__body {
     position: fixed;
     z-index: 4;
-    width: 100%;
-    height: 100%;
     top: 0;
     left: -100%;
+    width: 100%;
+    height: 100%;
     overflow: auto;
-    padding: 5rem 0.9375rem 3.125rem 0.9375rem;
+    padding: 6.25rem 0.9375rem 3.125rem 0.9375rem;
+    background-color: #000;
+    transition: left 0.3s ease 0s;
+  }
+
+  .menu__body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 70px;
     background-color: #000;
   }
 
-  .menu-top-header__link_arrow {
-    display: inline-block;
-    position: relative;
+  html.menu-open .menu__body::before {
+    left: 0;
   }
 
-  .menu-top-header__link_arrow::after {
-    position: absolute;
-    content: url("/Img/Incons/Arrow-bottom-white.svg");
-    right: -5.875rem;
+  .menu-top-header__link {
+    font-size: 1.25rem;
+  }
+
+  .menu-top-header__link_arrow {
+    display: inline-flex;
+    gap: 98px;
+  }
+
+  .body-header__content {
+    justify-content: space-between;
+  }
+
+  .actions-header__content {
+    display: none;
   }
 
   .actions-header__favourite,
@@ -498,14 +545,98 @@
     display: none;
   }
 
-  .icon-menu {
+  .menu-catalog__list:not(:first-child) {
+    padding-top: 1.45em;
+  }
+
+  .menu-catalog,
+  .sub-menu-catalog__block {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    padding: 1.5625rem 0.9375rem 3.125rem 0.9375rem;
+    background-color: #000;
+    transition: left 0.3s ease 0s;
+  }
+
+  .sub-menu-catalog__link-category {
+    font-size: 1.25rem;
+  }
+
+  html.catalog-open .menu-catalog,
+  html.sub-catalog-open .sub-menu-catalog__block {
+    left: 0;
+    z-index: 6;
+  }
+
+  html.sub-catalog-open .back-sub-menu-catalog,
+  .menu-catalog__back {
+    position: relative;
+    font-family: inherit;
+    font-weight: inherit;
+    display: inline-flex;
+    align-items: center;
+    font-size: 1.25rem;
+    line-height: 125%;
+    color: #fff;
+    padding-left: 30px;
+    transition: all 0.3s ease 0s;
+  }
+
+  html.sub-catalog-open .menu-catalog__back {
+    display: none;
+  }
+
+  html.sub-catalog-open .back-sub-menu-catalog {
+    z-index: 7;
+  }
+
+  html.sub-catalog-open .back-sub-menu-catalog::before,
+  .menu-catalog__back::before {
+    position: absolute;
+    left: 0;
+    content: url("/Img/Incons/Arrow-back.svg");
+  }
+
+  .menu-catalog__list {
+    row-gap: 1.5625rem;
+    flex-direction: column;
+  }
+
+  .menu-catalog__link {
+    display: inline-flex;
+    gap: 98px;
+    font-size: 1.25rem;
+  }
+
+  .sub-menu-catalog__block._sub-menu-open {
+    display: block;
+  }
+
+  .sub-menu-catalog__block {
+    padding-top: 4.8125rem;
+  }
+
+  .sub-menu-catalog__list,
+  .sub-menu-catalog__footer {
+    display: none;
+  }
+
+  .sub-menu-catalog__category:not(:last-child) {
+    margin-bottom: 1.5625rem;
+  }
+
+  .icon-menu,
+  .close-icon-menu {
     display: block;
     position: relative;
-    z-index: 5;
-    width: 30px;
-    height: 18px;
+    z-index: 100;
+    width: 40px;
+    height: 22.5px;
     cursor: pointer;
-    background-color: transparent;
   }
 
   .icon-menu::before,
@@ -516,6 +647,7 @@
     width: 100%;
     height: 2px;
     background-color: #fff;
+    transition: all 0.3s ease 0s;
   }
 
   .icon-menu::before,
@@ -527,11 +659,49 @@
     top: 0px;
   }
 
+  .icon-menu span {
+    top: 43.6%;
+  }
+
   .icon-menu::after {
     bottom: 0px;
   }
 
-  .icon-menu span {
-    top: 8px;
+  .close-icon-menu span {
+    display: none;
+  }
+
+  .close-icon-menu::before {
+    top: 10px;
+    transform: rotate(45deg);
+  }
+
+  .close-icon-menu::after {
+    bottom: 10px;
+    transform: rotate(-45deg);
+  }
+}
+
+/* MEDIA (MOBILE) */
+
+@media (max-width: 767px) {
+  .phones-header__phone::before {
+    content: url(/Img/Incons/Phone.svg);
+  }
+
+  .phones-header__phone span {
+    display: none;
+  }
+
+  .header__catalog {
+    padding: 1.25rem 0;
+  }
+
+  .search-header {
+    background-color: #fff;
+  }
+
+  .body-header__search {
+    padding-left: 0;
   }
 }
