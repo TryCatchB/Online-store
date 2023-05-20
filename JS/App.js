@@ -4,6 +4,7 @@ const popupContent = document.querySelector("#popup");
 const popupBtn = document.querySelector("#popup-btn");
 const iconMenu = document.querySelector(".icon-menu");
 const buttonMenu = document.querySelector("#buttonMenu");
+const tips = document.querySelectorAll(".media-main-block__tip");
 const menuCatalogBtnBack = document.querySelector(".menu-catalog__back");
 const subMenuCatalogBtnBack = document.querySelector(".back-sub-menu-catalog");
 const mediaQueryMobile = window.matchMedia("(max-width: 767px)").matches;
@@ -31,6 +32,8 @@ menuCatalogLinks.forEach((link) =>
   link.addEventListener("click", addClassTotalColumns)
 );
 
+tips.forEach((tip) => tip.addEventListener("click", showTip));
+
 document.addEventListener("click", documentActions);
 document.onclick = closeElements;
 
@@ -52,6 +55,26 @@ function closeElements(event) {
 function openMenu() {
   listMenu.classList.add("show");
   buttonMenu.classList.add("active");
+}
+
+function showTip(event) {
+  const currentTarget = event.target;
+
+  tips.forEach((tip) => {
+    const span = tip.querySelector("span");
+
+    if (currentTarget === span) {
+      const textTip = tip.querySelector(".media-main-block__tip-text");
+
+      textTip.style.display = "inline-flex";
+      textTip.textContent = tip.dataset.tippyContent;
+
+      span.addEventListener(
+        "mouseleave",
+        () => (textTip.style.display = "none")
+      );
+    }
+  });
 }
 
 function openPopup() {

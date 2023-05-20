@@ -4,12 +4,18 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <link
       href="https://fonts.googleapis.com/css?family=Montserrat:500,600,700&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+    />
     <link rel="stylesheet" href="Styles/Wrapper.css" />
     <link rel="stylesheet" href="Styles/Header.css" />
+    <link rel="stylesheet" href="Styles/Main/Main-block.css" />
     <title>ZLATMAX</title>
   </head>
   <body>
@@ -763,34 +769,183 @@
           <div class="main-block__container">
             <div class="main-block__content">
               <div class="main-block__body">
-                <div class="main-block__slider">
-                  <div class="main-block__swiper"></div>
-                  <div class="main-block__slide slide-main-block">
-                    <div class="slide-main-block__content">
-                      <h2 class="slide-main-block__title">
-                        Интернет магазин сертифицированных
-                      </h2>
-                      <h5 class="slide-main-block__sub-title">
-                        златоустовских ножей
-                      </h5>
-                      <p class="slide-main-block__text">
-                        Добро пожаловать на официальный сайт «ЗЛАТМАКС»! В нашем
-                        магазине представлен наиболее широкий выбор
-                        Златоустовских ножей от Златоустовских Оружейных Фабрик
-                        и компаний, мы являемся официальными поставщиками.
-                      </p>
-                      <a href="#" class="slide-main-block__button"></a>
+                <div class="main-block__swiper">
+                  <div class="main-block__swiper-wrapper swiper-wrapper">
+                    <div class="swiper-slide slide-main-block">
+                      <div class="slide-main-block__content">
+                        <h2
+                          data-swiper-parallax="-100"
+                          class="slide-main-block__title"
+                        >
+                          Интернет магазин сертифицированных
+                        </h2>
+                        <h5
+                          data-swiper-parallax="-150"
+                          class="slide-main-block__sub-title"
+                        >
+                          златоустовских ножей
+                        </h5>
+                        <p
+                          data-swiper-parallax="-200"
+                          class="slide-main-block__text"
+                        >
+                          Добро пожаловать на официальный сайт «ЗЛАТМАКС»! В
+                          нашем магазине представлен наиболее широкий выбор
+                          Златоустовских ножей от Златоустовских Оружейных
+                          Фабрик и компаний, мы являемся официальными
+                          поставщиками.
+                        </p>
+                      </div>
+                      <a
+                        data-swiper-parallax="-300"
+                        href="#"
+                        class="slide-main-block__button button"
+                        >Подробнее</a
+                      >
+                    </div>
+                    <div class="swiper-slide slide-main-block">
+                      <div class="slide-main-block__content">
+                        <h2
+                          data-swiper-parallax="-100"
+                          class="slide-main-block__title"
+                        >
+                          Интернет магазин сертифицированных
+                        </h2>
+                        <h5
+                          data-swiper-parallax="-150"
+                          class="slide-main-block__sub-title"
+                        >
+                          златоустовских ножей
+                        </h5>
+                        <p
+                          data-swiper-parallax="-200"
+                          class="slide-main-block__text"
+                        >
+                          Добро пожаловать на официальный сайт «ЗЛАТМАКС»! В
+                          нашем магазине представлен наиболее широкий выбор
+                          Златоустовских ножей от Златоустовских Оружейных
+                          Фабрик и компаний, мы являемся официальными
+                          поставщиками.
+                        </p>
+                      </div>
+                      <a
+                        data-swiper-parallax="-300"
+                        href="#"
+                        class="slide-main-block__button button"
+                        >Подробнее</a
+                      >
+                    </div>
+                    <div class="swiper-slide slide-main-block">
+                      <div class="slide-main-block__content">
+                        <h2
+                          data-swiper-parallax="-100"
+                          class="slide-main-block__title"
+                        >
+                          Интернет магазин сертифицированных
+                        </h2>
+                        <h5
+                          data-swiper-parallax="-150"
+                          class="slide-main-block__sub-title"
+                        >
+                          златоустовских ножей
+                        </h5>
+                        <p
+                          data-swiper-parallax="-200"
+                          class="slide-main-block__text"
+                        >
+                          Добро пожаловать на официальный сайт «ЗЛАТМАКС»! В
+                          нашем магазине представлен наиболее широкий выбор
+                          Златоустовских ножей от Златоустовских Оружейных
+                          Фабрик и компаний, мы являемся официальными
+                          поставщиками.
+                        </p>
+                      </div>
+                      <a
+                        data-swiper-parallax="-300"
+                        href="#"
+                        class="slide-main-block__button button"
+                        >Подробнее</a
+                      >
+                    </div>
+                  </div>
+                  <div class="main-block__controll controll-main-block">
+                    <div class="controll-main-block__dotts"></div>
+                    <div
+                      class="controll-main-block__fraction fraction-controll"
+                    >
+                      <span class="fraction-controll__current">0</span>/<span
+                        class="fraction-controll__all"
+                        >0</span
+                      >
                     </div>
                   </div>
                 </div>
                 <div class="main-block__media media-main-block">
-                  <div class="media-main-block__image"></div>
+                  <div class="media-main-block__body">
+                    <div class="media-main-block__image">
+                      <img src="Img/MainPage/Knives.png" alt="Knives" />
+                    </div>
+                    <div class="media-main-block__tips">
+                      <button
+                        type="button"
+                        data-tippy-content="Tip"
+                        class="media-main-block__tip media-main-block__tip_1"
+                      >
+                        <span>+</span>
+                        <p class="media-main-block__tip-text">Hello</p>
+                      </button>
+                      <button
+                        type="button"
+                        data-tippy-content="Tip"
+                        class="media-main-block__tip media-main-block__tip_2"
+                      >
+                        <span>+</span>
+                        <p class="media-main-block__tip-text"></p>
+                      </button>
+                      <button
+                        type="button"
+                        data-tippy-content="Tip"
+                        class="media-main-block__tip media-main-block__tip_3"
+                      >
+                        <span>+</span>
+                        <p class="media-main-block__tip-text"></p>
+                      </button>
+                    </div>
+                  </div>
                 </div>
               </div>
               <div class="main-block__advantages advantages-main">
                 <div class="advantages-main__item">
-                  <div class="advantages-main__icon"></div>
-                  <div class="advantages-main__text"></div>
+                  <div class="advantages-main__icon">
+                    <img src="Img/Incons/Guarantee.svg" alt="Guarantee" />
+                  </div>
+                  <p class="advantages-main__text">
+                    Гарантия 100% возврата денежных средств
+                  </p>
+                </div>
+                <div class="advantages-main__item">
+                  <div class="advantages-main__icon">
+                    <img src="Img/Incons/Delivery.svg" alt="Delivery" />
+                  </div>
+                  <p class="advantages-main__text">
+                    Доставка по России, Казахстану и Белоруссии
+                  </p>
+                </div>
+                <div class="advantages-main__item">
+                  <div class="advantages-main__icon">
+                    <img src="Img/Incons/Order.svg" alt="Order" />
+                  </div>
+                  <p class="advantages-main__text">
+                    Возможность оформление заказа без регистрации.
+                  </p>
+                </div>
+                <div class="advantages-main__item">
+                  <div class="advantages-main__icon">
+                    <img src="Img/Incons/Discount.svg" alt="Discount" />
+                  </div>
+                  <p class="advantages-main__text">
+                    Скидки постоянным покупателям.
+                  </p>
                 </div>
               </div>
             </div>
@@ -799,6 +954,9 @@
       </main>
       <footer class="footer"></footer>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="JS/Swiper.js"></script>
     <script src="JS/App.js"></script>
   </body>
 </html>

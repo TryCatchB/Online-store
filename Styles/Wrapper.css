@@ -55,8 +55,8 @@ body {
 .wrapper {
   display: flex;
   flex-direction: column;
-  overflow: hidden;
   min-height: 100%;
+  overflow: hidden;
 }
 
 [class*="__container"] {
