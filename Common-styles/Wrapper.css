@@ -49,7 +49,7 @@ body {
   font-weight: 500;
   font-size: 1.125rem;
   line-height: 122%;
-  color: #000000;
+  color: #141414;
 }
 
 .wrapper {
@@ -60,7 +60,7 @@ body {
 }
 
 [class*="__container"] {
-  max-width: 1620px;
+  max-width: 1623px;
   margin: 0 auto;
   padding: 0 15px;
 }

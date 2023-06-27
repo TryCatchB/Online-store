@@ -1,0 +1,83 @@
+.new-products {
+  background: url("/Img/New-products/Bg.jpg") bottom / cover no-repeat;
+
+  .new-products__content {
+    display: grid;
+    row-gap: 30px;
+    padding: 55px 0px 6.6% 0px;
+  }
+
+  .new-products__info {
+    .new-products__title {
+      font-weight: 700;
+      font-size: 1.875rem;
+      line-height: 153%;
+      color: #fff;
+    }
+
+    .new-products__text {
+      line-height: 150%;
+      letter-spacing: 0.03em;
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    .new-products__link {
+      position: relative;
+      font-weight: 600;
+      font-size: 1.25rem;
+      line-height: 230%;
+      color: #e8aa31;
+
+      &:hover {
+        text-decoration: underline;
+      }
+
+      &::after {
+        content: url(/Img/Incons/Arrow-yellow.svg);
+        display: inline-block;
+        transform: rotate(87deg);
+        margin-left: 1em;
+      }
+    }
+  }
+
+  .new-products__cards {
+    min-width: 0;
+    margin: 0;
+
+    .new-products__swiper {
+      &:not(:last-child) {
+        margin-bottom: 4.1%;
+      }
+    }
+  }
+}
+
+/* MEDIA (TABLET) */
+
+@media (min-width: 992px) {
+  .new-products__info {
+    padding-right: 15.1%;
+  }
+
+  .new-products__content {
+    align-items: start;
+    grid-template-columns: 25rem 1fr;
+  }
+
+  .new-products__title {
+    &:not(:last-child) {
+      margin-bottom: 7.5%;
+    }
+  }
+
+  .new-products__text {
+    &:not(:last-child) {
+      margin-bottom: 15%;
+    }
+  }
+
+  .new-products__cards {
+    padding-top: 2.3125rem;
+  }
+}

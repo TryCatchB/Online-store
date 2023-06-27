@@ -1,0 +1,47 @@
+.products-slider__content {
+  padding-bottom: 7.5%;
+}
+
+.products-slider__content_top {
+  padding-top: 7.5%;
+}
+
+.products-slider__header {
+  text-align: center;
+  &:not(:last-child) {
+    margin-bottom: 3.7%;
+  }
+}
+
+.products-slider__slider {
+  padding: 0.9% 4.5% 0.9% 0.5%;
+}
+
+.products-slider__swiper {
+  display: flex;
+  gap: 1.2%;
+  &:not(:last-child) {
+    margin-bottom: 3.125rem;
+  }
+}
+
+/* MEDIA (MOBILE) */
+
+@media (min-width: 767px) {
+  .products-slider__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.625rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .header__title {
+    font-size: 1.25rem;
+  }
+
+  .header__more {
+    font-size: 1rem;
+  }
+}
